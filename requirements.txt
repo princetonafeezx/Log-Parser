@@ -5,6 +5,3 @@
 pytest>=7.0.0
 black>=23.0.0
 flake8>=6.0.0
-
-# Optional: if you decide to use a more robust regex engine
-regex>=2023.0.0
