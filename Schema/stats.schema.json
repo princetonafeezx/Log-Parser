@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/princetonafeezx/Log-Parser/blob/main/Schema/stats.schema.json",
+  "title": "Analysis Stats",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "total_lines",
+    "parsed_lines",
+    "unparseable_lines",
+    "parse_rate",
+    "error_rate",
+    "2xx",
+    "3xx",
+    "4xx",
+    "5xx",
+    "other_status"
+  ],
+  "properties": {
+    "format": {
+      "type": "string",
+      "enum": [
+        "apache",
+        "nginx",
+        "generic"
+      ]
+    },
+    "total_lines": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "parsed_lines": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unparseable_lines": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "parse_rate": {
+      "type": "string",
+      "pattern": "^\\d+(?:\\.\\d+)?%$"
+    },
+    "error_rate": {
+      "type": "string",
+      "pattern": "^\\d+(?:\\.\\d+)?%$"
+    },
+    "2xx": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "3xx": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "4xx": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "5xx": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "other_status": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

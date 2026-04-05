@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/princetonafeezx/Log-Parser/blob/main/Schema/log-entry.schema.json",
+  "title": "Parsed Log Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "line",
+    "ip",
+    "timestamp",
+    "method",
+    "url",
+    "status",
+    "response_size",
+    "agent"
+  ],
+  "properties": {
+    "line": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ip": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "string",
+          "const": ""
+        }
+      ]
+    },
+    "method": {
+      "type": "string",
+      "pattern": "^[A-Z]+$"
+    },
+    "url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 999
+    },
+    "response_size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "agent": {
+      "type": "string"
+    }
+  }
+}

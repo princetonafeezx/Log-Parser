@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/princetonafeezx/Log-Parser/blob/main/Schema/report.schema.json",
+  "title": "DataGuard Log Analysis Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "module_name",
+    "title",
+    "output",
+    "entries",
+    "findings",
+    "warnings",
+    "errors",
+    "stats",
+    "metadata",
+    "summary"
+  ],
+  "properties": {
+    "module_name": {
+      "type": "string",
+      "const": "logs"
+    },
+    "title": {
+      "type": "string",
+      "const": "DataGuard Log Analysis Report"
+    },
+    "output": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "log-entry.schema.json"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "finding.schema.json"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stats": {
+      "$ref": "stats.schema.json"
+    },
+    "metadata": {
+      "$ref": "metadata.schema.json"
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/princetonafeezx/Log-Parser/blob/main/Schema/metadata.schema.json",
+  "title": "Run Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "format",
+    "top"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "apache",
+        "nginx",
+        "generic"
+      ]
+    },
+    "top": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}
